@@ -12,7 +12,11 @@ module.exports = declare((api, { jsx, ts }) => {
 					'corejs': 3
 				}
 			],
-			jsx && '@babel/preset-react',
+			jsx && ['@babel/preset-react',
+				{
+			  development: process.env.BABEL_ENV === 'development',
+				}
+			],
 			ts && [
 				'@babel/preset-typescript',
 				{
@@ -23,7 +27,6 @@ module.exports = declare((api, { jsx, ts }) => {
 		].filter(Boolean),
 		plugins: [
 			'@babel/plugin-transform-runtime',
-			'@babel/plugin-syntax-dynamic-import',
 			'@babel/plugin-proposal-class-properties',
 			jsx && [
 				'transform-react-remove-prop-types',
@@ -33,10 +36,8 @@ module.exports = declare((api, { jsx, ts }) => {
 			],
 			jsx && '@babel/plugin-transform-react-inline-elements',
 			jsx && '@babel/plugin-transform-react-constant-elements',
-			jsx && 'react-hot-loader/babel'
 		].filter(Boolean)
 	}
-
 
 	return preset
 })
