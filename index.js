@@ -4,14 +4,7 @@ module.exports = declare((api, { jsx, ts }) => {
 
 	const preset = {
 		presets: [
-			[
-				'@babel/preset-env',
-				{
-					'modules': false,
-					'useBuiltIns': 'usage',
-					'corejs': 3
-				}
-			],
+			'@babel/preset-modules',
 			jsx && ['@babel/preset-react',
 				{
 			  development: process.env.BABEL_ENV === 'development',
