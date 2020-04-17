@@ -1,6 +1,6 @@
 {
 	"name": "@simplyundoable/babel-preset",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Custom babel preset for SimplyUndoable",
 	"author": "Halvard Mørstad <halvard@simplyundoable.com> (https://twitter.com/halvardssm)",
 	"license": "MIT",
